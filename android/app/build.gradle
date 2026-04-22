@@ -105,11 +105,15 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    aaptOptions {
+        noCompress "task"
+    }
 }
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation 'com.google.mediapipe:tasks-genai:0.10.22'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
